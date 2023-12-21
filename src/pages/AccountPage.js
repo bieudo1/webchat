@@ -3,23 +3,12 @@ import { Container, Tab, Box, Tabs, Typography } from "@mui/material";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ShareIcon from "@mui/icons-material/Share";
 import AccountGeneral from "../features/user/AccountGeneral";
-import AccountSocialLinks from "../features/user/AccountSocialLinks";
 import { capitalCase } from "change-case";
 
 function AccountPage() {
   const [currentTab, setCurrentTab] = useState("general");
 
   const ACCOUNT_TABS = [
-    {
-      value: "general",
-      icon: <AccountBoxIcon sx={{ fontSize: 30 }} />,
-      component: <AccountGeneral />,
-    },
-    {
-      value: "social_links",
-      icon: <ShareIcon sx={{ fontSize: 30 }} />,
-      component: <AccountSocialLinks profile={{}} />,
-    },
   ];
 
   return (

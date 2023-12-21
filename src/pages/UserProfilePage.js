@@ -1,10 +1,7 @@
 import React, { useEffect } from "react";
 import { Card, Container } from "@mui/material";
-import Profile from "../features/user/Profile";
-import ProfileCover from "../features/user/ProfileCover";
 import { useParams } from "react-router-dom";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
-import { getUser } from "../features/user/userSlice";
 import LoadingScreen from "../components/LoadingScreen";
 
 function UserProfilePage() {
@@ -18,7 +15,6 @@ function UserProfilePage() {
 
   useEffect(() => {
     if (userId) {
-      dispatch(getUser(userId));
     }
   }, [dispatch, userId]);
 
@@ -28,16 +24,6 @@ function UserProfilePage() {
         <LoadingScreen />
       ) : (
         <>
-          <Card
-            sx={{
-              mb: 3,
-              height: 280,
-              position: "relative",
-            }}
-          >
-            {selectedUser && <ProfileCover profile={selectedUser} />}
-          </Card>
-          {selectedUser && <Profile profile={selectedUser} />}
         </>
       )}
     </Container>
